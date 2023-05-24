@@ -70,9 +70,9 @@ public class Seminar {
     // когда пользователь вводит пустую строку. Пользователю должно 
     // показаться сообщение, что пустые строки вводить нельзя.
     public static String inputString() {
-        try {
+        try (Scanner in = new Scanner(System.in);) {
             System.out.print("Введите строку: ");
-            Scanner in = new Scanner(System.in);
+            
             String res =  in.nextLine();
             if (res != "") {
                 in.close();
